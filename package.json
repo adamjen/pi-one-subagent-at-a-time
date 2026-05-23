@@ -1,6 +1,6 @@
 {
   "name": "@adamjen/pi-one-subagent-at-a-time",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Enforces sequential subagent execution — prevents concurrent subagent spawns that cause model swapping overhead on single-GPU setups.",
   "type": "module",
   "main": "extensions/one-subagent-at-a-time.ts",
