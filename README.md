@@ -102,6 +102,10 @@ The status indicator shows in the pi TUI:
 
 ---
 
+## Browse All Packages
+
+**[pi.dev/packages/@adamjen/pi-one-subagent-at-a-time?name=adamjen](https://pi.dev/packages/@adamjen/pi-one-subagent-at-a-time?name=adamjen)** — browse all my pi extensions.
+
 ## License
 
 MIT
