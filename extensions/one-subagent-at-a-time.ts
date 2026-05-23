@@ -16,6 +16,8 @@
  *    and returns `{ block: true, reason: "..." }`.
  * 4. If no subagent is running, increments the counter and allows the spawn.
  * 5. On `agent_end`, decrements the counter, freeing the gate.
+ * 6. On `tool_call_error`, if a subagent spawn failed, decrements the counter
+ *    to prevent the gate from being permanently stuck.
  *
  * ## Usage
  *
@@ -99,5 +101,19 @@ export default function (pi: any): void {
       }
     }
     return undefined;
+  });
+
+  // ------------------------------------------------------------------
+  // Failure recovery
+  // ------------------------------------------------------------------
+
+  /**
+   * Fired when a tool call fails.
+   * If a subagent spawn failed, decrement the counter to release the gate.
+   */
+  pi.on("tool_call_error", async (event: any) => {
+    if (event.toolName === "subagent" && pending > 0) {
+      pending--;
+    }
   });
 }
