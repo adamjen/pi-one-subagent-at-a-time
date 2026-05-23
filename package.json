@@ -1,0 +1,29 @@
+{
+  "name": "@adamjen/pi-one-subagent-at-a-time",
+  "version": "0.1.0",
+  "description": "Enforces sequential subagent execution — prevents concurrent subagent spawns that cause model swapping overhead on single-GPU setups.",
+  "type": "module",
+  "main": "extensions/one-subagent-at-a-time.ts",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "subagent",
+    "sequential",
+    "single-agent",
+    "local-models",
+    "rate-limiter"
+  ],
+  "author": "Adam <adamjen>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamjen/pi-one-subagent-at-a-time.git"
+  },
+  "homepage": "https://github.com/adamjen/pi-one-subagent-at-a-time",
+  "bugs": {
+    "url": "https://github.com/adamjen/pi-one-subagent-at-a-time/issues"
+  },
+  "pi": {
+    "extensions": ["extensions/one-subagent-at-a-time.ts"]
+  }
+}
